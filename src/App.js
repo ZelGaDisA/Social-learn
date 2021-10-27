@@ -30,6 +30,19 @@ const App = () => {
       <div className='content'>
         <img src='https://vjoy.cc/wp-content/uploads/2019/08/1-22.jpg' />
         <img src='https://d5nunyagcicgy.cloudfront.net/external_assets/hero_examples/hair_beach_v391182663/original.jpeg' />
+      
+      <div>
+        ava + description
+      </div>
+      <div>
+        My posts
+      </div>
+      <div>
+        new post
+      </div>
+      <div>
+        news
+      </div>
       </div>
     </div>
   )
