@@ -10,7 +10,7 @@ import Navigation from './components/Navigation';
 
 const App = () => {
   return (
-    <div>
+    <div className='app_wrapper'>
       <Header />
       <Navigation />
       <Content />
