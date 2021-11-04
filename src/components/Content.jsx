@@ -14,11 +14,13 @@ const Content = () => {
                 <div>
                     My posts
                 </div>
-                <div>
-                    Post 1
-                </div>
-                <div>
-                    Post 2
+                <div className='posts'>
+                    <div className='item'>
+                        Post 1
+                    </div>
+                    <div className='item'>
+                        Post 2
+                    </div>
                 </div>
             </div>
         </div>
