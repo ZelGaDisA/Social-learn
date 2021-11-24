@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import ss from './Navbar.module.css';
 
 
@@ -7,18 +8,18 @@ const Navigation = () => {
             <div>
                 <nav className={ss.nav}>
                     <div className={ss.item}>
-                        <a href="/content">Profile</a>
+                        <NavLink to="/content" activeClassName={ss.activeLink}>Profile</NavLink>
                     </div>
                     <div className={ss.item}>
-                        <a href="/dialogs">Messages</a>
+                        <NavLink to="/dialogs" activeClassName={ss.activeLink}>Messages</NavLink>
                     </div>
-                    <div className='item'>
+                    <div className={ss.item}>
                         <a>News</a>
                     </div>
-                    <div className='item'>
+                    <div className={ss.item}>
                         <a>Muzik</a>
                     </div>
-                    <div className='item'>
+                    <div className={ss.item}>
                         <a>Settings</a>
                     </div>
                 </nav>
