@@ -1,31 +1,19 @@
 import React from "react";
-import ss from '../Post/MyPosts.module.css';
+import ss from '../Post/Post.module.css';
 
 
-const MyPosts = () => {
+const Post = (props) => {
     return (
-        <div>
-            <div>
-                <textarea></textarea>
-                <button>Add post</button>
-                <button>Remove post</button>
-            </div>
-            <div className={ss.posts}>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 1
-                </div>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 2
-                </div>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 2
+        <div className={ss.posts}>
+            <div className={ss.item}>
+                <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
+                { props.message }
+                <div>
+                    <span>like</span> { props.likesCount }
                 </div>
             </div>
         </div>
     )
 }
 
-export default MyPosts;
+export default Post;

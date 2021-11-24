@@ -1,5 +1,6 @@
 import React from "react";
-import ss from '../Post/MyPosts.module.css';
+import ss from './MyPosts.module.css';
+import Post from './Post/Post';
 
 
 const MyPosts = () => {
@@ -10,20 +11,8 @@ const MyPosts = () => {
                 <button>Add post</button>
                 <button>Remove post</button>
             </div>
-            <div className={ss.posts}>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 1
-                </div>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 2
-                </div>
-                <div className={ss.item}>
-                    <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                    Post 2
-                </div>
-            </div>
+            <Post message='fk you' likesCount='15' />
+            <Post message='fk you too' likesCount='23' />
         </div>
     )
 }

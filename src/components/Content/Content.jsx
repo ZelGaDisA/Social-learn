@@ -1,6 +1,6 @@
 import React from "react";
 import ss from './Content.module.css';
-import MyPosts from "./MyPosts/Post/MyPosts";
+import MyPosts from "./MyPosts/MyPosts";
 
 
 const Content = () => {
