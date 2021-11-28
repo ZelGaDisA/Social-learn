@@ -14,7 +14,8 @@ import {
 
 
 
-const App = () => {
+
+const App = (props) => {
   return (
     <Router>
       <div className='app-wrapper'>
@@ -22,8 +23,8 @@ const App = () => {
         <Navigation />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/dialogs' element={<Dialogs />} />
-            <Route path='/content' element={<Content />} />
+            <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage} />} />
+            <Route path='/content' element={<Content state={props.state.contentPage} />} />
           </Routes>
         </div>
       </div>
