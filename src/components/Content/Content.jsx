@@ -10,7 +10,7 @@ const Content = (props) => {
         <div>
             <div>
                 <Profile />
-                <MyPosts  posts={props.state.posts} addPost={props.addPost} />
+                <MyPosts  posts={props.contentPage.posts} addPost={props.addPost} newPostText={props.contentPage.newPostText} updateNewPostText={props.updateNewPostText} />
             </div>
         </div>
     )

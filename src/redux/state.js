@@ -1,3 +1,5 @@
+import { rerenderEntireTree } from "../render";
+
 let state = {
     contentPage: {
         posts: [
@@ -7,7 +9,8 @@ let state = {
             { id: 4, message: 'Fuck Jack', likesCount: 42 },
             { id: 5, message: 'Me Jack', likesCount: 17 },
             { id: 6, message: 'your jack', likesCount: 11 }
-        ]
+        ],
+        newPostText: 'it-kama'
     },
     dialogsPage: {
         messages: [
@@ -30,14 +33,20 @@ let state = {
     sitebar: {}
 }
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
     let newPost = {
         id: 7,
-        message: postMessage,
+        message: state.contentPage.newPostText,
         likesCount: 0
     };
+    state.contentPage.posts.push(newPost);
+    state.contentPage.newPostText = '';
+    rerenderEntireTree(state);
+}
 
-    state.profilePage.posts.push(newPost);
+export let updateNewPostText = (newText) => {
+    state.contentPage.newPostText = newText;
+    rerenderEntireTree(state);
 }
 
 
