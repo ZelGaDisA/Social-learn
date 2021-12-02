@@ -2,12 +2,6 @@ import contentReduser from "./content-reduser";
 import dialogsReduser from "./dialogs-reduser";
 import sitebarReduser from "./sitebar-reduser";
 
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-
-const UPDATE_NEW_MESSAGE_BODY = 'UPDATE_NEW_MESSAGE_BODY';
-const SEND_MESSAGE = 'SEND_MESSAGE';
-
 let store = {
     _state: {
         contentPage: {
@@ -63,24 +57,6 @@ let store = {
     }
 }
 
-export const addPostActionCreator = () => ({
-        type: ADD_POST
-})
-
-export const updateNewPostTextActionCreator = (text) => ({
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text
-})
-
-
-export const sendMessageCreator = () => ({
-    type: SEND_MESSAGE
-})
-
-export const updateNewMessageBodyCreator = (body) => ({
-    type: UPDATE_NEW_MESSAGE_BODY,
-    body: body
-})
 
 export default store;
 

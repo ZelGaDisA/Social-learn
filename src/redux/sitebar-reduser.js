@@ -1,8 +1,8 @@
-const sitebarReduser = (state, action) => {
+let initialState = {}
+
+export const sitebarReduser = (state = initialState, action) => {
 
 
 
     return state;
 }
-
-export default sitebarReduser;
