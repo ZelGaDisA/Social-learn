@@ -1,7 +1,8 @@
 import React from "react";
 import ss from './Content.module.css';
-import MyPosts from "./MyPosts/MyPosts";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 import Profile from "./Profile/Profile";
+
 
 
 
@@ -10,9 +11,7 @@ const Content = (props) => {
         <div>
             <div>
                 <Profile />
-                <MyPosts  posts={props.contentPage.posts}
-                newPostText={props.contentPage.newPostText}
-                dispatch={props.dispatch} />
+                <MyPostsContainer  store={props.store}/>
             </div>
         </div>
     )
