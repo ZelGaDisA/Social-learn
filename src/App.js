@@ -23,8 +23,8 @@ const App = (props) => {
         <Navigation />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/dialogs' element={<DialogsContainer store={props.store} />} />
-            <Route path='/content' element={<Content store={props.store} />} />
+            <Route path='/dialogs' element={<DialogsContainer />} />
+            <Route path='/content' element={<Content />} />
           </Routes>
         </div>
       </div>
@@ -33,3 +33,4 @@ const App = (props) => {
 }
 
 export default App;
+// store={props.store} 

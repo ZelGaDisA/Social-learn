@@ -11,7 +11,7 @@ const Content = (props) => {
         <div>
             <div>
                 <Profile />
-                <MyPostsContainer  store={props.store}/>
+                <MyPostsContainer  />
             </div>
         </div>
     )
