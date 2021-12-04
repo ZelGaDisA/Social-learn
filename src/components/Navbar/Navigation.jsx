@@ -17,6 +17,9 @@ const Navigation = () => {
                         <a>News</a>
                     </div>
                     <div className={ss.item}>
+                        <a>Users</a>
+                    </div>
+                    <div className={ss.item}>
                         <a>Muzik</a>
                     </div>
                     <div className={ss.item}>

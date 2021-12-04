@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import Content from './components/Content/Content';
-import Header from './components/Header/Header'
+import Header from './components/Header/Header';
 import Navigation from './components/Navbar/Navigation';
+import UsersContainer from './components/Users/Users';
 import {
   BrowserRouter as Router,
   Route,
@@ -25,6 +26,7 @@ const App = () => {
           <Routes>
             <Route path='/dialogs' element={<DialogsContainer />} />
             <Route path='/content' element={<Content />} />
+            <Route path='/users' element={<UsersContainer />} />
           </Routes>
         </div>
       </div>
