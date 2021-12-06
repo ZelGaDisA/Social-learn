@@ -1,12 +1,12 @@
 import React from "react";
 
 let Users = (props) => {
-    return <div>
+    return (<div>
         {
             props.users.map( u => <div key={u.id}>
                 <span>
                     <div>
-                        <img src="" />
+                        <img src={u.photoUrl} />
                     </div>
                     <div>
                         <button>follow</button>
@@ -24,7 +24,7 @@ let Users = (props) => {
                 </span>
             </div>)
         }
-    </div>
+    </div>)
 }
 
 

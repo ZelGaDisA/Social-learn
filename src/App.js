@@ -3,7 +3,7 @@ import './App.css';
 import Content from './components/Content/Content';
 import Header from './components/Header/Header';
 import Navigation from './components/Navbar/Navigation';
-import UsersContainer from './components/Users/Users';
+import UsersContainer from './components/Users/UsersContainer';
 import {
   BrowserRouter as Router,
   Route,
