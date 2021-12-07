@@ -3,14 +3,7 @@ const UNFOLLOW = 'UNFOLLOW';
 const SET_USERS = 'SET_USERS';
 
 let initialState = {
-    users: [
-        { id: 1, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: false, fullName: 'Dimych', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' } },
-        { id: 2, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: true, fullName: 'Chyvak', status: 'I am a boss', location: { city: 'Moskow', country: 'Russia' } },
-        { id: 3, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: false, fullName: 'Evgen', status: 'I am a boss', location: { city: 'Kiev', country: 'Ukraine' } },
-        { id: 4, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: true, fullName: 'Sveta', status: 'I am a boss', location: { city: 'Berlin', country: 'Germany' } },
-        { id: 5, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: false, fullName: 'Saha', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' } },
-        { id: 6, photoUrl: 'https://www.famousbirthsdeaths.com/wp-content/uploads/2018/11/ava-max-bio-net-worth-facts.jpg', followed: false, fullName: 'Valeryiu', status: 'I am a boss', location: { city: 'Minsk', country: 'Belarus' } }
-    ]
+    users: [ ]
 }
 
 const usersReduser = (state = initialState, action) => {
