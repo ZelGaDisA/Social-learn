@@ -17,7 +17,7 @@ const Navigation = () => {
                         <a>News</a>
                     </div>
                     <div className={ss.item}>
-                        <a>Users</a>
+                        <NavLink to="/users" activeClassName={ss.activeLink}>Users</NavLink>
                     </div>
                     <div className={ss.item}>
                         <a>Muzik</a>

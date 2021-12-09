@@ -2,46 +2,43 @@ import React from "react";
 import styles from './users.module.css';
 import * as axios from 'axios';
 
-let Users = (props) => {
+class Users extends React.Component {
 
-    let getUsers = () => {
-        if (props.users.lenght === 0) {
-
-            axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-                props.setUsers(response.data.items);
+    componentDidMount() {
+        axios.get("https://social-network.samuraijs.com/api/1.0/users")
+        .then(response => {
+                this.props.setUsers(response.data.items);
             })
-        }
     }
 
 
-    return (<div>
-        <button onClick={getUsers}>Get Users</button>
-        {
-            props.users.map(u => <div key={u.id}>
-                <span>
-                    <div>
-                        <img src={u.photos.small} className={styles.userPhoto} />
-                    </div>
-                    <div>
-                        {u.followed ? <button onClick={() => { props.unfollow(u.id) }}>unfollow</button> : <button onClick={() => { props.follow(u.id) }}>follow</button>}
-                    </div>
-                </span>
-                <span>
+
+    render() {
+        return (<div>
+            {
+                this.props.users.map(u => <div key={u.id}>
                     <span>
-                        <div>{u.name}</div>
-                        <div>{u.status}</div>
+                        <div>
+                            <img src={u.photos.small} className={styles.userPhoto} />
+                        </div>
+                        <div>
+                            {u.followed ? <button onClick={() => { this.props.unfollow(u.id) }}>unfollow</button> : <button onClick={() => { this.props.follow(u.id) }}>follow</button>}
+                        </div>
                     </span>
                     <span>
-                        <div>{"u.location.country"}</div>
-                        <div>{"u.location.sity"}</div>
+                        <span>
+                            <div>{u.name}</div>
+                            <div>{u.status}</div>
+                        </span>
+                        <span>
+                            <div>{"u.location.country"}</div>
+                            <div>{"u.location.sity"}</div>
+                        </span>
                     </span>
-                </span>
-            </div>)
-        }
-    </div>)
+                </div>)
+            }
+        </div>)
+    }
 }
 
 export default Users;
-
-
-// Junior FrontEnd developer
