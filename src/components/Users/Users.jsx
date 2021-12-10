@@ -6,15 +6,27 @@ class Users extends React.Component {
 
     componentDidMount() {
         axios.get("https://social-network.samuraijs.com/api/1.0/users")
-        .then(response => {
+            .then(response => {
                 this.props.setUsers(response.data.items);
             })
     }
 
 
-
     render() {
+
+        let pagesCount = this.props.totalUsersCount / this.props.pageSize
+
+        let pages = [];
+        for (let i = 1; i <= pagesCount; i++) {
+            pages.push(i);
+        }
+
         return (<div>
+            <div>
+                {pages.map( p => {
+                    <span className={true && styles.selectedPage}>{p}</span>
+                })}
+            </div>
             {
                 this.props.users.map(u => <div key={u.id}>
                     <span>
