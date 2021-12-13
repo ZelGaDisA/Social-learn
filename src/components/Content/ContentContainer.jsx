@@ -20,14 +20,14 @@ class ContentContainer extends React.Component {
 
     render() {
         return (
-           <Content {...this.props} />
+           <Content {...this.props} profile={this.props.profile}/>
         )
     }
 }
 
 
 let mapStateToProps = (state) => ({
-    a:13
+    profile: state.contentPage.profile
 })
 
 
