@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import ContentContainer from './components/Content/Content';
+import ProfileContainer from './components/Content/ProfileContainer';
 import Header from './components/Header/Header';
 import Navigation from './components/Navbar/Navigation';
 import UsersContainer from './components/Users/UsersContainer';
@@ -25,7 +25,7 @@ const App = () => {
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/dialogs' element={<DialogsContainer />} />
-            <Route path='/content' element={<ContentContainer />} />
+            <Route path='/profile/:userId' element={<ProfileContainer />} />
             <Route path='/users' element={<UsersContainer />} />
           </Routes>
         </div>
