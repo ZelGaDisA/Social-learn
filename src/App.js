@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import ProfileContainer from './components/Content/ProfileContainer';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Navigation from './components/Navbar/Navigation';
 import UsersContainer from './components/Users/UsersContainer';
 import {
@@ -20,12 +20,12 @@ const App = () => {
   return (
     <Router>
       <div className='app-wrapper'>
-        <Header />
+        <HeaderContainer />
         <Navigation />
         <div className='app-wrapper-content'>
           <Routes>
             <Route path='/dialogs' element={<DialogsContainer />} />
-            <Route path='/profile/:userId' element={<ProfileContainer />} />
+            <Route path='/profile/:userId?' element={<ProfileContainer />} />
             <Route path='/users' element={<UsersContainer />} />
           </Routes>
         </div>
@@ -35,4 +35,3 @@ const App = () => {
 }
 
 export default App;
-// store={props.store} 
