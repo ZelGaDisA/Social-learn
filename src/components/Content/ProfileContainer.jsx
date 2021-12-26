@@ -2,42 +2,41 @@ import React from "react";
 import Profile from "./Profile";
 import { connect } from "react-redux";
 import { getUserProfile } from "../../redux/content-reduser";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import { compose } from "redux";
+import { useParams } from "react-router";
 
 
 
 
-class ProfileContainer extends React.Component {
+const ProfileContainer = (props) => {
 
-    componentDidMount () {
-        let userId = this.props.match.params.userId;
-        if (!userId) {
-            userId = 2;
-        }
-        this.props.getUserProfile(userId);
+
+    const pageNum = useParams()
+    const pageNumPick = (pageNum) => {
+      for (let key in pageNum) {
+        return pageNum[key]
+      }
     }
-    
 
+    let userId = pageNumPick(pageNum)
+    if (!userId) {
+      userId = 21229
+    }
 
-
-    render() {
-
-        if (!this.props.isAuth) return <redirect to="/login"/>
-
-        return (
-           <Profile {...this.props} profile={this.props.profile} />
+    props.getUserProfile(userId)
+  
+    return (
+           <Profile {...props} profile={props.profile} />
         )
-    }
 }
 
-let AuthRedirectComponent = (props) => {
-    
-} 
-
-
 let mapStateToProps = (state) => ({
-    profile: state.contentPage.profile,
-    isAuth: state.auth.isAuth
+    profile: state.contentPage.profile
 })
 
 
-export default connect (mapStateToProps, {getUserProfile}) (ProfileContainer);
+export default compose(
+    withAuthRedirect,
+    connect (mapStateToProps, {getUserProfile})
+)(ProfileContainer);

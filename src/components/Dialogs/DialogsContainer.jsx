@@ -1,12 +1,13 @@
 import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/dialogs-reduser";
 import Dialogs from "./Dialogs";
 import { connect } from "react-redux";
+import { withAuthRedirect } from "../../hoc/withAuthRedirect";
+import {compose} from "redux"
 
 
 const mapStateToProps = (state) => {
     return {
-        dialogsPage: state.dialogsPage,
-        isAuth: state.auth.isAuth
+        dialogsPage: state.dialogsPage
     }
 }
 
@@ -21,12 +22,7 @@ const mapDispachToProps = (dispatch) => {
     }
 }
 
-
-const DialogsContainer = connect(mapStateToProps, mapDispachToProps)(Dialogs);
-
-
-// <div className={ss.dialog + '' + ss.active}>
-//                     <NavLink to="/dialogs/1">Dimych</NavLink>
-//                 </div>
-
-export default DialogsContainer;
+export default compose(
+    connect(mapStateToProps, mapDispachToProps),
+    withAuthRedirect
+)(Dialogs);
