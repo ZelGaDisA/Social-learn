@@ -8,7 +8,7 @@ const Navigation = () => {
             <div>
                 <nav className={ss.nav}>
                     <div className={ss.item}>
-                        <NavLink to="/content" activeClassName={ss.activeLink}>Profile</NavLink>
+                        <NavLink to="/profile" activeClassName={ss.activeLink}>Profile</NavLink>
                     </div>
                     <div className={ss.item}>
                         <NavLink to="/dialogs" activeClassName={ss.activeLink}>Messages</NavLink>
