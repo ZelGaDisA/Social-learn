@@ -24,7 +24,8 @@ const ProfileContainer = (props) => {
       userId = 21229
     }
 
-    props.getUserProfile(userId)
+    props.getUserProfile(userId);
+    props.getUserStatus(userId);
   
     return (
            <Profile {...props} profile={props.profile} />
@@ -32,7 +33,8 @@ const ProfileContainer = (props) => {
 }
 
 let mapStateToProps = (state) => ({
-    profile: state.contentPage.profile
+    profile: state.contentPage.profile,
+    status: state.profilePage.status
 })
 
 
