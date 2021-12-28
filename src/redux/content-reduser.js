@@ -16,10 +16,10 @@ let initialState = {
     ],
     newPostText: 'it-kama',
     profile: null,
-    status: ''
+    status: ""
 };
 
-export const contentReduser = (state = initialState, action) => {
+export const profileReduser = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST: {
             let newPost = {
@@ -86,11 +86,10 @@ export const getStatus = (userId) => (dispatch) => {
         });
 }
 
-export const updateStatus = (status) => (dispatch) => {
-    profileAPI.updateStatus(status)
-        .then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(setStatus(status));
-            }
-        });
-}
+export const updateStatus = status => dispatch =>{
+    profileAPI.updateStatus(status).then(response => {
+      if (response.data.data.resultCode === 0 ) {
+        dispatch(setStatus(status))
+      }
+    })
+  }

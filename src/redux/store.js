@@ -1,10 +1,10 @@
-import contentReduser from "./content-reduser";
+import profileReduser from "./content-reduser";
 import dialogsReduser from "./dialogs-reduser";
 import sitebarReduser from "./sitebar-reduser";
 
 let store = {
     _state: {
-        contentPage: {
+        profilePage: {
             posts: [
                 { id: 1, message: 'Hi Jack', likesCount: 12 },
                 { id: 2, message: 'Bye Jack', likesCount: 14 },
@@ -49,7 +49,7 @@ let store = {
 
     dispatch(action) {
 
-        this._state.contentPage = contentReduser(this._state.contentPage, action);
+        this._state.profiletPage = profileReduser(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReduser(this._state.dialogsPage, action);
         this._state.sitebar = sitebarReduser(this._state.sitebar, action);
 

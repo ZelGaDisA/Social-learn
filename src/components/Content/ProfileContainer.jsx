@@ -13,33 +13,34 @@ import { getStatus, updateStatus } from "../../redux/content-reduser";
 const ProfileContainer = (props) => {
 
 
-    const pageNum = useParams()
-    const pageNumPick = (pageNum) => {
-      for (let key in pageNum) {
-        return pageNum[key]
-      }
+  const pageNum = useParams()
+  const pageNumPick = (pageNum) => {
+    for (let key in pageNum) {
+      return pageNum[key]
     }
+  }
 
-    let userId = pageNumPick(pageNum)
-    if (!userId) {
-      userId = 21229
-    }
+  let userId = pageNumPick(pageNum)
+  if (!userId) {
+    userId = 21229
+  }
 
-    props.getUserProfile(userId);
-    props.getStatus(userId);
-  
-    return (
-           <Profile {...props} profile={props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
-        )
+  props.getUserProfile(userId);
+  props.getStatus(userId);
+
+
+  return (
+    <Profile {...props} profile={props.profile} status={props.status} updateStatus={props.updateStatus} />
+  )
 }
 
 let mapStateToProps = (state) => ({
-    profile: state.contentPage.profile,
-    status: state.profilePage.status
+  profile: state.profilePage.profile,
+  status: state.profilePage.status
 })
 
 
 export default compose(
-    withAuthRedirect,
-    connect (mapStateToProps, {getUserProfile, getStatus, updateStatus})
+  withAuthRedirect,
+  connect(mapStateToProps, { getUserProfile, getStatus, updateStatus })
 )(ProfileContainer);
