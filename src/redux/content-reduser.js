@@ -16,7 +16,7 @@ let initialState = {
     ],
     newPostText: 'it-kama',
     profile: null,
-    status: ""
+    status: ''
 };
 
 export const contentReduser = (state = initialState, action) => {
@@ -86,9 +86,11 @@ export const getStatus = (userId) => (dispatch) => {
         });
 }
 
-export const updateStatus = (userId) => (dispatch) => {
-    profileAPI.getStatus(userId)
+export const updateStatus = (status) => (dispatch) => {
+    profileAPI.updateStatus(status)
         .then(response => {
-            dispatch(setStatus(response.data));
+            if (response.data.resultCode === 0) {
+                dispatch(setStatus(status));
+            }
         });
 }

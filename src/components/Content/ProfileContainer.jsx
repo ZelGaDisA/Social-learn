@@ -5,6 +5,7 @@ import { getUserProfile } from "../../redux/content-reduser";
 import { withAuthRedirect } from "../../hoc/withAuthRedirect";
 import { compose } from "redux";
 import { useParams } from "react-router";
+import { getStatus, updateStatus } from "../../redux/content-reduser";
 
 
 
@@ -25,10 +26,10 @@ const ProfileContainer = (props) => {
     }
 
     props.getUserProfile(userId);
-    props.getUserStatus(userId);
+    props.getStatus(userId);
   
     return (
-           <Profile {...props} profile={props.profile} />
+           <Profile {...props} profile={props.profile} status={this.props.status} updateStatus={this.props.updateStatus} />
         )
 }
 
@@ -40,5 +41,5 @@ let mapStateToProps = (state) => ({
 
 export default compose(
     withAuthRedirect,
-    connect (mapStateToProps, {getUserProfile})
+    connect (mapStateToProps, {getUserProfile, getStatus, updateStatus})
 )(ProfileContainer);
