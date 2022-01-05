@@ -9,9 +9,3 @@ export const maxLenghtCreator = (maxLenght) => (value) => {
 
     return undefined;
 }
-
-export const maxLenght = value => {
-    if (value.lenght > 30) return "Max lenght is 30";
-
-    return undefined;
-}
