@@ -14,7 +14,7 @@ const MyPosts = (props) => {
             <form onSubmit="props.handleSubmit">
                 <h3>My Posts</h3>
                 <div>
-                    <Field name="newPostText" component={Textarea} validate={[requred, maxLenght10]}/>
+                    <Field name="newPostText" component={Textarea} validate={[requred]} placeholder={"Post message"}/>
                 </div>
                 <div>
                     <button>Add post</button>
