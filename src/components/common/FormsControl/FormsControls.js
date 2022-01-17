@@ -7,7 +7,7 @@ const FormControl = ({ input, meta, child, ...props }) => {
     return (
         <div className={s.formKontrol + "" + (hasError ? s.error : "")}>
             <div>
-                {props.child}
+                {props.children}
             </div>
             {hasError && <span>{meta.error}</span>}
         </div>
@@ -16,9 +16,11 @@ const FormControl = ({ input, meta, child, ...props }) => {
 
 
 export const Textarea = (props) => {
-    return <FormControl {...props}><textarea {...input} {...props} /></FormControl>
+    const { input, meta, child, ...restProps } = props;
+    return <FormControl {...props}><textarea {...input} {...restProps} /></FormControl>
 }
 
-export const Input = ({ input, meta, ...props }) => {
-    return (<FormControl {...props}><input {...input} {...props} /></FormControl>)
+export const Input = (props) => {
+    const { input, meta, child, ...restProps } = props;
+    return (<FormControl {...props}><input {...input} {...restProps} /></FormControl>)
 }
