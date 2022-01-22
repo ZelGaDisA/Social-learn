@@ -12,21 +12,21 @@ import { getStatus, updateStatus } from "../../redux/content-reduser";
 
 const ProfileContainer = (props) => {
 
+  const { user_id } = useParams();
 
-  const pageNum = useParams()
-  const pageNumPick = (pageNum) => {
-    for (let key in pageNum) {
-      return pageNum[key]
+  useEffect(() => {
+    let userId = user_id;
+    if (!userId) {
+      userId = props.authorizedUserId;
+      if (!userId) {
+        props.history.push("/login")
+      }
     }
-  }
-
-  let userId = pageNumPick(pageNum)
-  if (!userId) {
-    userId = 21229
-  }
-
-  props.getUserProfile(userId);
-  props.getStatus(userId);
+    if (!userId) return;
+    props.getUserProfile(userId);
+    props.getStatus(userId);
+    console.log("======> request")
+  }, [user_id]);
 
 
   return (
