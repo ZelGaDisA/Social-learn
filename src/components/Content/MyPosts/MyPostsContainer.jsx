@@ -1,6 +1,6 @@
 import { addPostActionCreator } from '../../../redux/content-reduser';
 import MyPosts from "./MyPosts";
-import {connect} from "react-redux"
+import { connect } from "react-redux"
 
 
 const mapStateToProps = (state) => {
@@ -10,15 +10,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispachToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        addPost: (newPostText) => {
-            dispatch(addPostActionCreator(newPostText));
-        }
+        addPost: (newPostText) => { dispatch(addPostActionCreator(newPostText)) },
     }
 }
 
+const MyPostsContainer = connect(mapStateToProps, mapDispatchToProps)(MyPosts)
 
-const MyPostsContainer = connect(mapStateToProps, mapDispachToProps)(MyPosts);
-
-export default MyPostsContainer;
+export default MyPostsContainer
