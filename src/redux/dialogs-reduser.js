@@ -1,5 +1,8 @@
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
+
+export const sendMessage = (newMessageBody) => ({ type: SEND_MESSAGE, newMessageBody })
+
 let initialState = {
     messages: [
         { id: 1, message: 'Hi Jack' },
@@ -20,20 +23,17 @@ let initialState = {
 };
 
 
-export const dialogsReduser = (state = initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
+  
     switch (action.type) {
-        case SEND_MESSAGE:
-            let body = action.newMessageBody;
-            return {
-                ...state,
-                messages: [...state.messages, { id: 7, message: body }]
-            }
-        default:
-            return state;
+      case SEND_MESSAGE: 
+        const body = action.newMessageBody
+        return {
+          ...state,
+          messages: [...state.messages, { id: Date.now(), message: body }]
+        }
+      default: return state
     }
-}
-
-export const sendMessageCreator = (newMessageBody) => ({
-    type: SEND_MESSAGE,
-    newMessageBody
-})
+  }
+  
+  export default dialogsReducer
