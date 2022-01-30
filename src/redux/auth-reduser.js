@@ -106,7 +106,7 @@ export default authReducer
 // });
 // }
 
-export default authReduser;
+// export default authReduser;
 
 
 
