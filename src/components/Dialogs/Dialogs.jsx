@@ -20,7 +20,6 @@ const Dialogs = (props) => {
         props.sendMessage(values.newMessageBody);
     }
 
-    // if (!props.isAuth) return <Redirect to={"/login"} />;
 
     return (
         <div className={ss.dialogs}>
@@ -34,21 +33,6 @@ const Dialogs = (props) => {
         </div>
     )
 }
-// const AddMessageForm = (props) => {
-//     return (
-//         <form onSubmit={props.handleSubmit}>
-//             <div>
-//                 <Field conponent="textarea" name="newMessageBody" placeholder="Enter your message" />
-//             </div>
-//             <div><button>Send Message</button></div>
-//         </form>
-//     )
-// }
 
-
-// const AddMessageFormRedux = reduxForm ({form: "dialogAddMessageForm"}) (AddMessageForm);
-{/* <textarea onChange={onNewMessageChange}
-                value={newMessageBody}
-                placeholder='Enter your message'></textarea> */}
 
 export default Dialogs;
