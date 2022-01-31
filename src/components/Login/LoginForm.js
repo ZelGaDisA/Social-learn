@@ -1,8 +1,8 @@
-import React from "react";
-import { reduxForm } from "redux-form";
-import { required } from "../../utils/validators/validators";
-import { createField, Input } from "../common/FormsControls/FormsControls";
-import "../common/FormsControls/FormsControls.css"
+import React from "react"
+import { reduxForm } from "redux-form"
+import { required } from "../../utils/validators"
+import { createField, Input } from "../common/FormsControl/FormsControls"
+import "../common/FormsControl/FormsControls.css"
 
 const LoginForm = ({ handleSubmit, error }) => {
   return (
