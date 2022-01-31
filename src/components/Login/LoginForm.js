@@ -2,7 +2,7 @@ import React from "react"
 import { reduxForm } from "redux-form"
 import { required } from "../../utils/validators"
 import { createField, Input } from "../common/FormsControl/FormsControls"
-import "../common/FormsControl/FormsControls.css"
+import s from '../common/FormsControl/FormControls.module.css'
 
 const LoginForm = ({ handleSubmit, error }) => {
   return (
@@ -11,7 +11,7 @@ const LoginForm = ({ handleSubmit, error }) => {
       {createField("Password", "password", [required], Input, { type: "password" })}
       {createField(null, "rememberMe", [], Input, { type: "checkbox" }, "remember me")}
       {
-        error && <div className="formSummaryError">
+        error && <div className={s.formSummaryError}>
           {error}
         </div>
       }

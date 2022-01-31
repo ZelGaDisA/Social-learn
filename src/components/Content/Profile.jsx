@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router";
-import MyPostsContainer from "./MyPosts/MyPostsContainer";
-import ProfileInfo from "./Profile/ProfileInfo";
+import MyPostsContainer from "../Content/MyPosts/MyPostsContainer";
+import ProfileInfo from "../Content/Profile/ProfileInfo";
 
 
 

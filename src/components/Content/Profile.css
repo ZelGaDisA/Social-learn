@@ -1,0 +1,54 @@
+.profile {
+    grid-area: c;
+    display: grid;
+    grid-template-areas:
+    "infoColumn postsColumn";
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+  }
+  
+  .infoColumn {
+    grid-area: infoColumn;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profilePhoto {
+    grid-area: profilePhoto;
+    margin-bottom: 10px;
+  }
+  
+  .profilePhoto img {
+    max-width: 300px
+  }
+  
+  .personalInfo {
+    grid-area: personalInfo;
+    background-color: orange;
+    height: 700px;
+  }
+  
+  
+  .postsColumn {
+    grid-area: postsColumn;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .postCreating {
+    grid-area: postCreating;
+    display: flex;
+    flex-direction: column;
+    background-color: orange;
+    height: 250px;
+    margin-bottom: 10px;
+  }
+  .personalPosts {
+    grid-area: personalPosts;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact {
+    padding-left: 10px;
+  }
