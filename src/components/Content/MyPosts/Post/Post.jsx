@@ -3,17 +3,43 @@ import ss from '../Post/Post.module.css';
 
 
 const Post = (props) => {
+
     return (
-        <div className={ss.posts}>
-            <div className={ss.item}>
-                <img src='https://vjoy.cc/wp-content/uploads/2020/10/krasivye-kartinki-na-avu-dlya-devushek-i-devochek-samye-klassnye-15.jpg' />
-                { props.message }
+        <div className={ss.postCommon}>
+            <div className={ss.postHead}>
+                <div  className={ss.postHead}>
+                    <div className={ss.miniAva}>
+                        mini-ava
+                        <img href="" alt="" />
+                    </div>
+                    <div>
+                        <a className={ss.postLink} href='http://localhost:3000/'>Profile Name</a>
+                        <p className={ss.weakText}>post date</p>
+                    </div>
+                </div>
                 <div>
-                    <span>like</span> { props.likesCount }
+                    post options
+                </div>
+            </div>
+            <div className={ss.postMain}>
+                <div>{props.text}</div>
+                <div className={ss.postImg}>
+                    image added to post
+                    <img src="" alt="" />
+                </div>
+            </div>
+            <div className={ss.postFoot}>
+                <div className={ss.postFootItem}>
+                    <div>
+                        like
+                    </div>
+                    <p className={ss.weakText}>
+                        {props.likesCount}
+                    </p>
                 </div>
             </div>
         </div>
     )
 }
 
-export default Post;
+export default Post

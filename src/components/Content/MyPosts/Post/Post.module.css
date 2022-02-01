@@ -7,3 +7,49 @@
     height: 60px;
     border-radius: 30px;
 }
+
+
+.postCommon {
+    display: block;
+    margin-bottom: 10px;
+    border: 1px black solid;
+}
+
+.postHead {
+    display: flex;
+    justify-content: space-between;
+    background-color: aqua;
+}
+
+.miniAva {
+    background-color: purple;
+}
+
+.postLink{
+    text-decoration: none;
+}
+
+.weakText {
+    font-size: 14px;
+}
+
+
+.postImg {
+    height: 100px;
+    width: 200px;
+    background-color: royalblue;
+}
+
+.postFoot {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    background-color: aquamarine;
+}
+
+.postFootItem {
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+    margin-right: 10px;
+}
