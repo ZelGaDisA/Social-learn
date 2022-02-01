@@ -1,13 +1,11 @@
 import React from "react";
-import ss from '../Dialogs.module.css';
-
-
 
 const Message = (props) => {
-    return <div className={ss.dialog}>{props.message}</div>
+    return (
+        <div className='dialogsMessages' key={props.id}>
+            {props.message}
+        </div>
+    )
 }
 
-
-
-
-export default Message;
+export default Message

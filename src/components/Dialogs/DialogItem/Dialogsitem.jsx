@@ -3,19 +3,13 @@ import ss from '../Dialogs.module.css';
 import { NavLink } from "react-router-dom";
 
 
-const DialogItem = (props) => {
-
-    let path = "/dialogs/" + props.id;
+const DialogsItem = (props) => {
 
     return (
-        <div>
-            <div className={ss.dialog}>
-                <NavLink to={path}>{props.name}</NavLink>
-            </div>
-        </div >
+        <div className={ss.dialogsItem}>
+            <NavLink to={`/dialogs/${props.id}`}>{props.name}</NavLink>
+        </div>
     )
 }
 
-
-
-export default DialogItem;
+export default DialogsItem

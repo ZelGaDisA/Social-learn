@@ -19,3 +19,33 @@
 .messages .message {
     color: white;
 }
+
+
+.dialogsWrapper {
+    grid-area: c;
+    display: grid;
+    grid-template-areas:
+            "dialogsItems dialogsMessagesWindow";
+    grid-template-columns: 300px 1fr;
+    grid-gap: 10px;
+}
+
+.dialogsItems {
+    display: flex;
+    flex-direction: column;
+    background-color: brown;
+}
+
+.dialogsItem {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.dialogsMessagesWindow {
+    background-color:aqua;
+}
+
+.active {
+    background-color: rgb(68, 142, 238);
+    color: white;
+}

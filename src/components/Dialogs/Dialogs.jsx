@@ -1,25 +1,25 @@
 import React from "react";
 import ss from './Dialogs.module.css';
-import DialogItem from "./DialogItem/Dialogsitem";
-import Message from "./Message/Message";
+import DialogsItem from "./DialogItem/Dialogsitem";
+import MessagesItem from "./Message/Message";
 import AddMessageForm from "./AddMessageForm";
+import { Navigate } from "react-router"
 
 
 
 
 const Dialogs = (props) => {
 
-    let state = props.dialogsPage;
+    const state = props.dialogsPage
 
-    let dialogElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id} />);
-    let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} />)
-    let newMessageBody = state.newMessageBody;
+    const dialogElements = state.dialogs.map(d => <DialogsItem id={d.id} key={d.id} name={d.name} />)
+    const messagesElements = state.messages.map(m => <MessagesItem id={m.id} key={m.id} message={m.message} />)
 
-
-    let addNewMessage = (values) => {
-        props.sendMessage(values.newMessageBody);
+    const addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody)
     }
 
+    if(!props.isAuth) return <Navigate to="/login" />
 
     return (
         <div className={ss.dialogs}>

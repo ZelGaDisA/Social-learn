@@ -1,0 +1,12 @@
+.paginator {
+    margin: 10px
+}
+
+.pageNumber {
+    padding: 2px;
+}
+
+.pageNumber.selectedPage {
+    background-color: rgb(68, 142, 238);
+    color: white;
+}
