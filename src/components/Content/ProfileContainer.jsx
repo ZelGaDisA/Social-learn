@@ -9,7 +9,6 @@ const ProfileContainer = ({onPageChanged, getStatus, authorizedUserId, getUserPr
   const {user_id} = useParams();
 
   useEffect(() => {
-    console.log(user_id, authorizedUserId)
     let userId = user_id;
     if (!userId) {
       userId = authorizedUserId;
@@ -17,7 +16,6 @@ const ProfileContainer = ({onPageChanged, getStatus, authorizedUserId, getUserPr
         props.history && props.history.push("/login")
       }
     }
-    console.log(userId)
     if (!userId) return;
 
     getUserProfile(userId);
