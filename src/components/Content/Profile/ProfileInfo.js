@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Preloader from "../../common/Preloader/Preloader";
-import "../Content.module.css"
+import "../Content.css"
 import ProfileStatusFunc from "./ProfileStatusFunc"
 import userPhoto from "../../../assets/user.jpg";
 import ProfileDataForm from "./ProfileDataForm";

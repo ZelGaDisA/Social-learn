@@ -2,53 +2,53 @@
     grid-area: c;
     display: grid;
     grid-template-areas:
-    "infoColumn postsColumn";
+            "infoColumn postsColumn";
     grid-template-columns: 300px 1fr;
     grid-gap: 10px;
-  }
-  
-  .infoColumn {
+}
+
+.infoColumn {
     grid-area: infoColumn;
     display: flex;
     flex-direction: column;
-  }
-  
-  .profilePhoto {
+}
+
+.profilePhoto {
     grid-area: profilePhoto;
     margin-bottom: 10px;
-  }
-  
-  .profilePhoto img {
+}
+
+.profilePhoto img {
     max-width: 300px
-  }
-  
-  .personalInfo {
+}
+
+.personalInfo {
     grid-area: personalInfo;
     background-color: orange;
     height: 700px;
-  }
-  
-  
-  .postsColumn {
+}
+
+
+.postsColumn {
     grid-area: postsColumn;
     display: flex;
     flex-direction: column;
-  }
-  
-  .postCreating {
+}
+
+.postCreating {
     grid-area: postCreating;
     display: flex;
     flex-direction: column;
     background-color: orange;
     height: 250px;
     margin-bottom: 10px;
-  }
-  .personalPosts {
+}
+.personalPosts {
     grid-area: personalPosts;
     display: flex;
     flex-direction: column;
-  }
-  
-  .contact {
+}
+
+.contact {
     padding-left: 10px;
-  }
+}
