@@ -14,16 +14,16 @@ const Navigation = () => {
                         <NavLink to="/dialogs" activeClassName={ss.activeLink}>Messages</NavLink>
                     </div>
                     <div className={ss.item}>
-                        <a>News</a>
+                    <NavLink to="/muzik" activeClassName={ss.activeLink}>Muzik</NavLink>
                     </div>
                     <div className={ss.item}>
                         <NavLink to="/users" activeClassName={ss.activeLink}>Users</NavLink>
                     </div>
                     <div className={ss.item}>
-                        <a>Muzik</a>
+                    <NavLink to="/news" activeClassName={ss.activeLink}>News</NavLink>
                     </div>
                     <div className={ss.item}>
-                        <a>Settings</a>
+                    <NavLink to="/Settings" activeClassName={ss.activeLink}>Settings</NavLink>
                     </div>
                 </nav>
             </div>
